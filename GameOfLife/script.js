@@ -63,7 +63,7 @@ function matrixGenerator(matrixSize, grassCount, grassEaterCount, predatorCount,
                 }
         }
 
-        
+
 
 
 
@@ -99,20 +99,20 @@ function setup() {
                         else if (matrix[y][x] == 4) {
                                 let vors = new Vorsord(x, y)
                                 vorsordArr.push(vors)
-                                
+
                         }
                         else if (matrix[y][x] == 5) {
                                 let tsh = new Tshnami(x, y)
                                 tshnamiArr.push(tsh)
-                                
+
                         }
                         else if (matrix[y][x] == 6) {
                                 let zom = new Zombi(x, y)
                                 zombiArr.push(zom)
-                                
+
                         }
-                       
-                        
+
+
                 }
         }
 
@@ -127,14 +127,14 @@ function draw() {
                                 fill('yellow')
                         } else if (matrix[y][x] == 3) {
                                 fill('blue')
-                        }else if (matrix[y][x] == 4) {
+                        } else if (matrix[y][x] == 4) {
                                 fill('black')
-                        }else if (matrix[y][x] == 5) {
+                        } else if (matrix[y][x] == 5) {
                                 fill('red')
-                        }else if (matrix[y][x] == 6) {
+                        } else if (matrix[y][x] == 6) {
                                 fill('maroon')
                         }
-                        
+
                         else {
                                 fill("gray")
                         }
@@ -167,7 +167,7 @@ function draw() {
         for (let index = 0; index < zombiArr.length; index++) {
                 zombiArr[index].eat();
         }
-        
+
 
 }
 console.log("hello world");
