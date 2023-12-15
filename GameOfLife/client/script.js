@@ -71,6 +71,7 @@ function matrixGenerator(matrixSize, grassCount, grassEaterCount, predatorCount,
 }
 
 let matrix = matrixGenerator(20, 20, 10, 5, 2, 10, 9);
+
 let side = 40;
 let grassArray = [];
 var grassEaterArr = [];
@@ -85,29 +86,29 @@ function setup() {
         for (let y = 0; y < matrix.length; y++) {
                 for (let x = 0; x < matrix[0].length; x++) {
                         if (matrix[y][x] == 1) {
-                                let gr = new Grass(x, y)
+                                let gr = new grass(x, y)
                                 grassArray.push(gr);
                         }
                         else if (matrix[y][x] == 2) {
-                                let gre = new GrassEater(x, y)
+                                let gre = new grassEater(x, y)
                                 grassEaterArr.push(gre);
                         }
                         else if (matrix[y][x] == 3) {
-                                let pred = new Predator(x, y)
+                                let pred = new predator(x, y)
                                 predatorArr.push(pred)
                         }
                         else if (matrix[y][x] == 4) {
-                                let vors = new Vorsord(x, y)
+                                let vors = new vorsord(x, y)
                                 vorsordArr.push(vors)
 
                         }
                         else if (matrix[y][x] == 5) {
-                                let tsh = new Tshnami(x, y)
+                                let tsh = new tshnami(x, y)
                                 tshnamiArr.push(tsh)
 
                         }
                         else if (matrix[y][x] == 6) {
-                                let zom = new Zombi(x, y)
+                                let zom = new zombi(x, y)
                                 zombiArr.push(zom)
 
                         }
@@ -170,5 +171,5 @@ function draw() {
 
 
 }
-console.log("hello world");
+
 
