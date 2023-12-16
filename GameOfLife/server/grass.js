@@ -6,7 +6,7 @@ module.exports = class Grass extends LivingCreature{
        
     
 
-module.exports = class Grass extends LivingCreature{
+    }
     
 
     
@@ -28,5 +28,8 @@ module.exports = class Grass extends LivingCreature{
             this.multiply = 0;
         }
     }
+
+}
+
 
 }

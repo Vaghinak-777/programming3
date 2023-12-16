@@ -1,12 +1,11 @@
-class Vorsord {
-    constructor(x, y) {
-        this.x = x
-        this.y = y
-        this.energy = 30
-        this.direction = {
-
+let LivingCreature = require("./livingCreature")
+module.exports =class Vorsord  extends LivingCreature {
+            constructor(x, y) {
+            super(x, y);
         }
+
     }
+
     getNewCoordinates() {
         this.directions [
             [this.x - 1, this.y - 1],
@@ -73,7 +72,7 @@ class Vorsord {
             if (this.energy >= 14) {
                 this.mul()
             }
-        }
+        
         else {
             this.move()
         }
