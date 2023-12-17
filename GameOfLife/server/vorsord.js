@@ -2,9 +2,10 @@ let LivingCreature = require("./livingCreature")
 module.exports =class Vorsord  extends LivingCreature {
             constructor(x, y) {
             super(x, y);
+            this.energy = 5;
         }
 
-    }
+    
 
     getNewCoordinates() {
         this.directions [
@@ -78,6 +79,9 @@ module.exports =class Vorsord  extends LivingCreature {
         }
     }
 
+
+    }
+
     mul() {
         let emptyCell = this.chooseCell(0)
         let newCell = random(emptyCell)
@@ -105,4 +109,5 @@ module.exports =class Vorsord  extends LivingCreature {
             }
         }
     }
+
 }
