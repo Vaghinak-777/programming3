@@ -1,7 +1,8 @@
-class Varaq{
+let LivingCreature = require("./livingCreature")
+
+module.exports = class Varaq extends LivingCreature {
     constructor(x,y){
-        this.x = x
-        this.y = y
+        super(x,y)
         this.energy = 20
         this.direction = {
            
@@ -31,7 +32,7 @@ chooseCell(char1, char2) {
 move() {
     this.energy--
     let emptyCells = this.chooseCell(0)
-    let newCell = random(emptyCells)
+    let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
     if (newCell) {
         let newX = newCell[0]
         let newY = newCell[1]
@@ -48,7 +49,7 @@ move() {
 
 eat() {
     let foods = this.chooseCell(4)
-    let food = random(foods)
+    let food = foods[Math.floor(Math.random() * foods.length)]
     if (food) {
         this.energy++;
         console.log(this.energy);
@@ -80,4 +81,5 @@ eat() {
         this.move()
     }
 }
+//_mul,die
 }

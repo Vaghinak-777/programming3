@@ -1,11 +1,14 @@
-class Tshnami extends ListeningCreature {
+let LivingCreature = require("./livingCreature")
+
+module.exports = class Tshnami extends ListeningCreature {
     constructor(x, y) {
-        this.x = x
-        this.y = y
+        super(x,y)
         this.energy = 4
+        //-
         this.direction = {
 
         }
+        //_
     }
 
     getNewCoordinates() {
@@ -30,7 +33,7 @@ class Tshnami extends ListeningCreature {
     move() {
         this.energy--
         let emptyCells = this.chooseCell(0)
-        let newCell = random(emptyCells)
+        let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
         if (newCell) {
             let newX = newCell[0]
             let newY = newCell[1]
@@ -45,10 +48,9 @@ class Tshnami extends ListeningCreature {
         }
     }
 
-    // _________
     eat() {
         let foods = this.chooseCell(3,4)
-        let food = random(foods)
+        let food = foods[Math.floor(Math.random() * foods.length)]
         if (food) {
             this.energy++;
             console.log(this.energy);
@@ -83,7 +85,7 @@ class Tshnami extends ListeningCreature {
 
     mul() {
         let emptyCell = this.chooseCell(0)
-        let newCell = random(emptyCell)
+        let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
         if (newCell ) {
             let newX = newCell[0]
