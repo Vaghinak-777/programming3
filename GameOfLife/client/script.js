@@ -1,4 +1,4 @@
-
+var socket = io();
 
 let side = 40;
 
@@ -10,7 +10,16 @@ function setup() {
 
 }
 
-function drawGame() {
+let btn = document.getElementsByClassName("btn")
+
+function reload(){
+    location.reload();
+}
+
+btn[0].addEventListener("click",reload)
+
+
+function drawGame(matrix) {
         for (let y = 0; y < matrix.length; y++) {
                 for (let x = 0; x < matrix[y].length; x++) {
                         if (matrix[y][x] == 1) {

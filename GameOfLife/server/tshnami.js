@@ -1,14 +1,10 @@
 let LivingCreature = require("./livingCreature")
 
-module.exports = class Tshnami extends ListeningCreature {
-    constructor(x, y) {
+module.exports = class Tshnami extends LivingCreature {
+    constructor(x,y) {
         super(x,y)
         this.energy = 4
-        //-
-        this.direction = {
 
-        }
-        //_
     }
 
     getNewCoordinates() {
@@ -84,7 +80,7 @@ module.exports = class Tshnami extends ListeningCreature {
     }
 
     mul() {
-        let emptyCell = this.chooseCell(0)
+        let emptyCells = this.chooseCell(0)
         let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
         if (newCell ) {

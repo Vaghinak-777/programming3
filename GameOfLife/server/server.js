@@ -171,9 +171,33 @@ for (let index = 0; index < zombiArr.length; index++) {
     io.sockets.emit("send matrix", matrix);
 }
 
+
+
+
 setInterval(game, 1000)
 io.on('connection', function () {
     createObject(matrix)
 })
 
-//?
+let statistickObj = {
+    grass:0,
+    grassEater:0,
+    predator:0,
+    tshnami:0,
+    vorsord:0,
+    zombi:0,
+    varaq:0,
+}
+
+setInterval(function(){
+    statistickObj.grass = grassArray.length;
+    statistickObj.grassEater = grassArray.length;
+    statistickObj.predator = grassArray.length;
+    statistickObj.tshnami= grassArray.length;
+    statistickObj.vorsord = grassArray.length;
+    statistickObj.zombi = grassArray.length;
+    statistickObj.varaq = grassArray.length;
+
+    let result = JSON.stringify(statistickObj)
+
+}, 1000)

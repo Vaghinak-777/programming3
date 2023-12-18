@@ -1,11 +1,10 @@
-class Zombi {
-    constructor(x, y) { 
-        this.x = x
-        this.y = y
-        this.energy = 20
-        this.direction = {
+let LivingCreature = require("./livingCreature")
 
-        }
+module.exports = class Zombi extends LivingCreature {
+    constructor(x, y) { 
+        super(x,y)
+        this.energy = 8
+
     }
 
     getNewCoordinates() {
@@ -30,7 +29,7 @@ class Zombi {
     move() {
         this.energy--
         let emptyCells = this.chooseCell(0)
-        let newCell = random(emptyCells)
+        let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
         if (newCell) {
             let newX = newCell[0]
             let newY = newCell[1]
@@ -47,7 +46,7 @@ class Zombi {
 
     eat() {
         let foods = this.chooseCell(2,3,4,5)
-        let food = random(foods)
+        let food = foods[Math.floor(Math.random() * foods.length)]
         if (food) {
             this.energy++;
             console.log(this.energy);
@@ -81,8 +80,8 @@ class Zombi {
     }
 
     mul() {
-        let emptyCell = this.chooseCell(0)
-        let newCell = random(emptyCell)
+        let emptyCells = this.chooseCell(0)
+        let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
         if (newCell ) {
             let newX = newCell[0]

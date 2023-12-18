@@ -4,9 +4,7 @@ module.exports = class Varaq extends LivingCreature {
     constructor(x,y){
         super(x,y)
         this.energy = 20
-        this.direction = {
-           
-        }
+        
 
    }
 
