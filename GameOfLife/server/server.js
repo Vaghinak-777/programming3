@@ -189,15 +189,15 @@ let statistickObj = {
     varaq:0,
 }
 
-setInterval(function(){
-    statistickObj.grass = grassArray.length;
-    statistickObj.grassEater = grassArray.length;
-    statistickObj.predator = grassArray.length;
-    statistickObj.tshnami= grassArray.length;
-    statistickObj.vorsord = grassArray.length;
-    statistickObj.zombi = grassArray.length;
-    statistickObj.varaq = grassArray.length;
+ setInterval(function(){
+   statistickObj.grass = grassArray.length;
+   statistickObj.grassEater = grassArray.length;
+   statistickObj.predator = grassArray.length;
+   statistickObj.tshnami= grassArray.length;
+   statistickObj.vorsord = grassArray.length;
+   statistickObj.zombi = grassArray.length;
+   statistickObj.varaq = grassArray.length;
 
     let result = JSON.stringify(statistickObj)
-
-}, 1000)
+    
+ }, 1000)
