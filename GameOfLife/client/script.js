@@ -11,6 +11,14 @@ function setup() {
 }
 
 let btn = document.getElementsByClassName("btn")
+let Bombs = document.getElementById("Bombs")
+Bombs.addEventListener("click",boom)
+
+
+function boom(){
+        console.log(boom)
+}
+
 
 function reload(){
     location.reload();

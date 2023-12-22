@@ -49,7 +49,6 @@ module.exports = class Zombi extends LivingCreature {
         let food = foods[Math.floor(Math.random() * foods.length)]
         if (food) {
             this.energy++;
-            console.log(this.energy);
 
             matrix[this.y][this.x] = 0
             let newX = food[0]

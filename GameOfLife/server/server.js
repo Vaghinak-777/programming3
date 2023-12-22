@@ -199,5 +199,12 @@ let statistickObj = {
    statistickObj.varaq = grassArray.length;
 
     let result = JSON.stringify(statistickObj)
+
+    fs.writeFile("statstics.json", result, function(err){
+        console.log("fs.writeFile ended");
+        });
     
- }, 1000)
+ }, 6000)
+
+ 
+
