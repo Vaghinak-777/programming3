@@ -174,10 +174,8 @@ for (let index = 0; index < zombiArr.length; index++) {
 
 
 
-setInterval(game, 1000)
-io.on('connection', function () {
-    createObject(matrix)
-})
+setInterval(game, 400)
+
 
 let statistickObj = {
     grass:0,
@@ -206,5 +204,20 @@ let statistickObj = {
     
  }, 6000)
 
- 
+ function restartGame(){
+    grassArray = [];
+    grassEaterArr = [];
+    predatorArr = [];
+    vorsordArr = [];
+    tshnamiArr = [];
+    zombiArr = [];
+    matrix = null;
+    matrix = matrixGenerator(20, 20, 10, 5, 2, 10, 9);
+    createObject(matrix);
 
+ }
+
+ io.on('connection', function (socket) {
+     createObject(matrix);
+     socket.on("restart", restartGame)
+ })

@@ -10,21 +10,12 @@ function setup() {
 
 }
 
-let btn = document.getElementsByClassName("btn")
-let Bombs = document.getElementById("Bombs")
-Bombs.addEventListener("click",boom)
+let restartBtn = document.getElementById("restart")
+restartBtn.addEventListener("click", handleRestart)
 
-
-function boom(){
-        console.log(boom)
+function handleRestart(){
+        socket.emit("restart")
 }
-
-
-function reload(){
-    location.reload();
-}
-
-btn[0].addEventListener("click",reload)
 
 
 function drawGame(matrix) {
@@ -56,10 +47,7 @@ function drawGame(matrix) {
 
 }
 
-setInterval(
-        function () {
-        socket.on('send matrix', drawGame)
-        },1000
-    )
+socket.on('send matrix', drawGame)
+
 
 
